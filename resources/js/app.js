@@ -26,14 +26,22 @@ let router = new Router({
 			component: {
 				template: '<div>Esta es la página archivo</div>'
 			}
+		},
+		{
+			path: '/contacto',
+			component: {
+				template: '<div>Esta es la página contacto</div>'
+			}
 		}
-	]
+	],
+	linkExactActiveClass: 'active'
 });
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * A continuación, crearemos una instancia de aplicación Vue nueva
+ * y la adjuntaremos a la página. Luego, puede comenzar a agregar
+ * componentes a esta aplicación o personalizar los andamios de
+ * JavaScript para que se ajusten a sus necesidades únicas.
  */
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));

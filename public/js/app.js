@@ -15817,7 +15817,7 @@ if (inBrowser && window.Vue) {
 var disposed = false
 var normalizeComponent = __webpack_require__(36)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(53)
 /* template */
 var __vue_template__ = __webpack_require__(37)
 /* template functional */
@@ -15974,29 +15974,46 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "section",
+    { staticClass: "posts container" },
+    [
+      _vm._l(_vm.posts, function(post) {
+        return _c("article", { staticClass: "post" }, [
+          _c("div", { staticClass: "content-post" }, [
+            _c("h1", { domProps: { textContent: _vm._s(post.title) } }),
+            _vm._v(" "),
+            _c("div", { staticClass: "divider" }),
+            _vm._v(" "),
+            _c("p", { domProps: { innerHTML: _vm._s(post.excerpt) } }),
+            _vm._v(" "),
+            _vm._m(0, true)
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      !_vm.posts.length
+        ? _c("article", { staticClass: "post" }, [_vm._m(1)])
+        : _vm._e()
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "posts container" }, [
-      _c("article", { staticClass: "post" }, [
-        _c("div", { staticClass: "content-post" }, [
-          _c("div", { staticClass: "divider" }),
-          _vm._v(" "),
-          _c("footer", { staticClass: "container-flex space-between" }, [
-            _c("div", { staticClass: "read-more" })
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("article", { staticClass: "post" }, [
-        _c("div", { staticClass: "content-post" }, [
-          _c("h1", [_vm._v("No hay publicaciones todavía.")])
-        ])
-      ])
+    return _c("footer", { staticClass: "container-flex space-between" }, [
+      _c("div", { staticClass: "read-more" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content-post" }, [
+      _c("h1", [_vm._v("No hay publicaciones todavía.")])
     ])
   }
 ]
@@ -16369,6 +16386,72 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-2995bb7e", module.exports)
   }
 }
+
+/***/ }),
+/* 51 */,
+/* 52 */,
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			posts: []
+		};
+	},
+	mounted: function mounted() {
+		var _this = this;
+
+		// Obtener los Posts
+		axios.get('/api/posts').then(function (res) {
+			_this.posts = res.data.data;
+		}).catch(function (err) {
+			console.log(err);
+		});
+	}
+});
 
 /***/ })
 /******/ ]);

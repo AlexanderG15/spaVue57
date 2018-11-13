@@ -9,6 +9,23 @@
 
 			<div class="content-post">
 					<!-- @include('posts.header') -->
+					<header class="container-flex space-between">
+						<div class="date">
+							<span class="c-gris">
+								{{ post.published_date }} / {{ post.owner.name }}
+							</span>
+						</div>
+						<!-- @if ($post->category) -->
+							<div class="post-category">
+								<span class="category">
+									<a href="#">{{ post.category.name }}</a>
+<!-- 									<a href="{{ route('categories.show', $post->category) }}">
+
+									</a> -->
+								</span>
+							</div>
+						<!-- @endif -->
+					</header>
 
 					<h1 v-text="post.title"></h1>
 
@@ -16,21 +33,26 @@
 					<p v-html="post.excerpt"></p>
 					<footer class="container-flex space-between">
 						<div class="read-more">
-							<!-- <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">
+							<a href="#" class="text-uppercase c-green">
 								Leer más...
-							</a> -->
+							</a>
 						</div>
 
 						<!-- @include('posts.tags') -->
+						<div class="tags container-flex">
+							<span class="tag c-gris" v-for="tag in post.tags">
+								<a href="#">#{{ tag.name }}</a>
+							</span>
+						</div>
 					</footer>
 				</div>
-		</article>
-		<!-- @empty -->
-		<article class="post" v-if="! posts.length">
-			<div class="content-post">
-				<h1>No hay publicaciones todavía.</h1>
-			</div>
-		</article>
+			</article>
+			<!-- @empty -->
+			<article class="post" v-if="! posts.length">
+				<div class="content-post">
+					<h1>No hay publicaciones todavía.</h1>
+				</div>
+			</article>
 		<!-- @endforelse -->
 
 		<!-- {{ $posts->appends(request()->all())->links() }} -->

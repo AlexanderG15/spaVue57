@@ -12052,32 +12052,13 @@ module.exports = __webpack_require__(12);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes__ = __webpack_require__(45);
 __webpack_require__(13);
 
 window.Vue = __webpack_require__(10);
 
 
 
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
-
-var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-	routes: [{
-		path: '/',
-		component: __webpack_require__(36)
-	}, {
-		path: '/nosotros',
-		component: __webpack_require__(39)
-	}, {
-		path: '/archivo',
-		component: __webpack_require__(41)
-	}, {
-		path: '/contacto',
-		component: __webpack_require__(43)
-	}],
-	linkExactActiveClass: 'active'
-});
 
 /**
  * A continuación, crearemos una instancia de aplicación Vue nueva
@@ -12089,8 +12070,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-	el: '#app',
-	router: router
+  el: '#app',
+  router: __WEBPACK_IMPORTED_MODULE_1__routes__["a" /* default */]
 });
 
 /***/ }),
@@ -16501,6 +16482,127 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-1d91a851", module.exports)
+  }
+}
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(35);
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+	routes: [{
+		path: '/',
+		name: 'home',
+		component: __webpack_require__(36)
+	}, {
+		path: '/nosotros',
+		name: 'about',
+		component: __webpack_require__(39)
+	}, {
+		path: '/archivo',
+		name: 'archive',
+		component: __webpack_require__(41)
+	}, {
+		path: '/contacto',
+		name: 'contact',
+		component: __webpack_require__(43)
+	}, {
+		path: '*',
+		component: __webpack_require__(46)
+	}],
+	linkExactActiveClass: 'active'
+}));
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(47)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/404.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d215c3ee", Component.options)
+  } else {
+    hotAPI.reload("data-v-d215c3ee", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "pages container" }, [
+    _c("div", { staticClass: "page page-about" }, [
+      _c("h1", { staticClass: "text-capitalize" }, [
+        _vm._v("Página no encontrada")
+      ]),
+      _vm._v(" "),
+      _c(
+        "p",
+        [
+          _vm._v("Regresar a\n\t\t\t"),
+          _c("router-link", { attrs: { to: { name: "home" } } }, [
+            _vm._v("Inicio")
+          ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d215c3ee", module.exports)
   }
 }
 

@@ -11,27 +11,19 @@ let router = new Router({
 	routes: [
 		{
 			path: '/',
-			component: {
-				template: '<div>Esta es la página principal</div>'
-			}
+			component: require('./views/Home')
 		},
 		{
 			path: '/nosotros',
-			component: {
-				template: '<div>Esta es la página nosotros</div>'
-			}
+			component: require('./views/About')
 		},
 		{
 			path: '/archivo',
-			component: {
-				template: '<div>Esta es la página archivo</div>'
-			}
+			component: require('./views/Archive')
 		},
 		{
 			path: '/contacto',
-			component: {
-				template: '<div>Esta es la página contacto</div>'
-			}
+			component: require('./views/Contact')
 		}
 	],
 	linkExactActiveClass: 'active'

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+	public function spa()
+	{
+		return view('pages.spa');
+	}
+
   public function home()
   {
 		//$query = Post::with(['category', 'tags', 'owner', 'photos'])->published();    	//Query scopes --> Modelo

@@ -1,14 +1,7 @@
 <?php
 
-/* Route::get('email', function() {
-  return new App\Mail\LoginCredentials(App\User::first(), 'asd123');
-}); */
+Route::get('/', 'PagesController@spa')->name('pages.home');
 
-/* DB::listen(function($query){
-	var_dump($query->sql);
-}); */
-
-Route::get('/', 'PagesController@home')->name('pages.home');
 Route::get('nosotros', 'PagesController@about')->name('pages.about');
 Route::get('archivo', 'PagesController@archive')->name('pages.archive');
 Route::get('contacto', 'PagesController@contact')->name('pages.contact');

@@ -983,6 +983,7 @@ module.exports = __webpack_require__(10);
 __webpack_require__(11);
 
 window.Vue = __webpack_require__(31);
+//import Vue from 'vue';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

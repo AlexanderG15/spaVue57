@@ -45,37 +45,24 @@ class PagesController extends Controller
 
 	public function archive()
 	{
-			//return Post::selectRaw('monthname(published_at)')->groupBy('published_at')->get();
-/* 			return Post::selectRaw('year(published_at)')
-									->selectRaw('month(published_at)')
-									->groupBy('year(published_at)', 'month(published_at)')
-									->get(); */
-
-/* 			$archive = Post::selectRaw('year(published_at) year')
-							->selectRaw('monthname(published_at) month')
-							->selectRaw('count(*) posts')
-							->groupBy('year', 'month')
-							->orderBy('published_at')
-							->get(); */
-
-			//\DB::statement("SET lc_time_names = 'es_ES'");		//AppServiceProvider
-
-/* 			$archive = Post::selectRaw('year(published_at) year')
-										->selectRaw('month(published_at) month')
-										->selectRaw('monthname(published_at) monthname')
-										->selectRaw('count(*) posts')
-										->groupBy('year', 'month', 'monthname')
-										->orderBy('published_at')
-										->get(); */
-
-			$archive = Post::published()->byYearAndMonth()->get();				//scopes --> Modelo
-
-			return view('pages.archive', [
-				'authors' 	 => User::latest()->take(4)->get(),
+    $data = [
+				'authors' => User::latest()->take(4)->get(),
 				'categories' => Category::take(7)->get(),
-				'posts' 		 => Post::latest('published_at')->take(5)->get(),
-				'archive'		 => $archive
-			]);
+				'posts' => Post::latest('published_at')->take(5)->get(),
+				'archive' => Post::selectRaw('year(published_at) year')
+              ->selectRaw('monthname(published_at) month')
+              ->selectRaw('count(*) posts')
+              ->groupBy('year', 'month')
+              ->orderBy('published_at')
+              ->get()
+    ];
+    
+    if (request()->wantsJson())
+    {
+        return $data;
+    }
+    
+    return view('pages.archive', $data);
 	}
 
 	public function contact()

@@ -27,7 +27,7 @@ export default new Router({
 		},
 		{
 			path: '/blog/:url',
-			name: 'post_show',
+			name: 'posts_show',
 			component: require('./views/PostsShow'),
       props: true
 		},

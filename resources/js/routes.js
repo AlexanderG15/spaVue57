@@ -21,6 +21,11 @@ export default new Router({
 			component: require('./views/Archive')
 		},
 		{
+			path: '/blog/:url',
+			name: 'post_show',
+			component: require('./views/PostsShow')
+		},
+		{
 			path: '/contacto',
 			name: 'contact',
 			component: require('./views/Contact')

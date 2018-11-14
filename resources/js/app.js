@@ -12,7 +12,8 @@ import router from './routes'
  * JavaScript para que se ajusten a sus necesidades únicas.
  */
 
-//Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('post-header', require('./components/PostHeader.vue'));
+Vue.component('nav-bar', require('./components/NavBar.vue'));
 
 const app = new Vue({
 	el: '#app',

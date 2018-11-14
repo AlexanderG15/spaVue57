@@ -292,3 +292,20 @@ a.btn-bar{
 .carousel-inner .item img{
 	width: 100%;
 }
+
+.page-wrapper{
+	min-height: 100vh;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .3s cubic-bezier(.17,.67,.83,.67);
+    /*transform: translateY(1000px);*/
+}
+.slide-fade-enter, .slide-fade-leave-to {
+    /* .slide-fade-leave-active below version 2.1.8 */
+    transform: translateY(800px);
+    opacity: 0;
+}

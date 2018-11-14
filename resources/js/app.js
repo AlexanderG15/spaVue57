@@ -5,6 +5,8 @@ import Vue from 'vue';
 
 import router from './routes'
 
+// require('vue2-animate/dist/vue2-animate.min.css');
+
 /**
  * A continuación, crearemos una instancia de aplicación Vue nueva
  * y la adjuntaremos a la página. Luego, puede comenzar a agregar

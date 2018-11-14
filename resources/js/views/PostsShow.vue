@@ -9,8 +9,13 @@
       <div class="image-w-text" v-html="post.body"> </div>
 
       <footer class="container-flex space-between">
-        <!-- @include('partials.social-links', ['description' => $post->title]) -->
-        <!-- @include('posts.tags') -->
+        <social-links :description="post.title" />
+        
+        <div class="tags container-flex">
+          <span class="tag c-gris" v-for="tag in post.tags">
+            <tag-link :tag="tag" />
+          </span>
+        </div>
       </footer>
 
       <div class="comments">

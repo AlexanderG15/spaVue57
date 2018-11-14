@@ -21,15 +21,20 @@ export default new Router({
 			component: require('./views/Archive')
 		},
 		{
+			path: '/contacto',
+			name: 'contact',
+			component: require('./views/Contact')
+		},
+		{
 			path: '/blog/:url',
 			name: 'post_show',
 			component: require('./views/PostsShow')
 		},
 		{
-			path: '/contacto',
-			name: 'contact',
-			component: require('./views/Contact')
-		},
+      path: '/categorias/:category',
+      name: 'category_posts',
+      component: require('./views/CategoryPosts')
+    },
 		{
 			path: '*',
 			component: require('./views/404')

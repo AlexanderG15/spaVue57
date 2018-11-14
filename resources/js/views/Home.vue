@@ -1,21 +1,8 @@
 <template>
-  <div>
-    <posts-list :posts="posts"></posts-list>
-
-    <div class="pagination" v-if="pagination.last_page > 1">
-      <ul class="list-unstyled container-flex space-center">
-        <li v-for="page in pagination.last_page">
-          <router-link :class="getActiveClass(page)" :to="{
-            name: 'home',
-            query: {
-                page: page
-            }
-          }">{{ page }}</router-link>
-        </li>
-      </ul>
-    </div>
-    <pre>{{ pagination }}</pre>
-  </div>
+  <paginator
+    url="/api/posts"
+    component-name="posts-list"
+  />
 </template>
 
 <script>

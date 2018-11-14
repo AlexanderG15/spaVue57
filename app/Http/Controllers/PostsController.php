@@ -11,6 +11,9 @@ class PostsController extends Controller
   {
 		if ($post->isPublished() || auth()->check())
 		{
+      // Cargar todas las relaciones
+      $post->load('owner', 'category', 'tags', 'photos');
+      
       if (request()->wantsJson())
       {
         return $post;

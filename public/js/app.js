@@ -13643,6 +13643,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 		component: __webpack_require__(61)
 	}],
 	linkExactActiveClass: 'active',
+	mode: 'history',
 	scrollBehavior: function scrollBehavior() {
 		return { x: 0, y: 0 };
 	}

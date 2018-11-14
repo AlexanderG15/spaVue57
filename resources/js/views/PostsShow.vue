@@ -24,6 +24,7 @@
 
 <script>
   export default {
+    props: ['url'],
     data(){
       return {
           post: {
@@ -33,7 +34,7 @@
       }
     },
     mounted(){
-      axios.get(`/api/blog/${this.$route.params.url}`)
+      axios.get(`/api/blog/${this.url}`)
         .then(res => {
           this.post = res.data;
         })

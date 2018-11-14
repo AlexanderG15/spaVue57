@@ -4,13 +4,14 @@
 
 <script>
 	export default {
+    props: ['tag'],
 		data() {
 			return {
 				posts: []
 			}
 		},
 		mounted() {
-			axios.get(`/api/etiquetas/${this.$route.params.tag}`)
+			axios.get(`/api/etiquetas/${this.tag}`)
 				.then(res => {
 					this.posts = res.data.data;
 				})

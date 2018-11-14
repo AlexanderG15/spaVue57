@@ -13306,15 +13306,18 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 	}, {
 		path: '/blog/:url',
 		name: 'post_show',
-		component: __webpack_require__(46)
+		component: __webpack_require__(46),
+		props: true
 	}, {
 		path: '/categorias/:category',
 		name: 'category_posts',
-		component: __webpack_require__(49)
+		component: __webpack_require__(49),
+		props: true
 	}, {
 		path: '/etiquetas/:tag',
 		name: 'tags_posts',
-		component: __webpack_require__(52)
+		component: __webpack_require__(52),
+		props: true
 	}, {
 		path: '*',
 		component: __webpack_require__(55)
@@ -16481,6 +16484,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['url'],
   data: function data() {
     return {
       post: {
@@ -16492,7 +16496,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted: function mounted() {
     var _this = this;
 
-    axios.get("/api/blog/" + this.$route.params.url).then(function (res) {
+    axios.get('/api/blog/' + this.url).then(function (res) {
       _this.post = res.data;
     }).catch(function (err) {
       console.log(err.response.data);
@@ -16608,6 +16612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['category'],
 	data: function data() {
 		return {
 			posts: []
@@ -16616,7 +16621,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	mounted: function mounted() {
 		var _this = this;
 
-		axios.get("/api/categorias/" + this.$route.params.category).then(function (res) {
+		axios.get('/api/categorias/' + this.category).then(function (res) {
 			_this.posts = res.data.data;
 		}).catch(function (err) {
 			console.log(err);
@@ -16703,6 +16708,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['tag'],
 	data: function data() {
 		return {
 			posts: []
@@ -16711,7 +16717,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	mounted: function mounted() {
 		var _this = this;
 
-		axios.get("/api/etiquetas/" + this.$route.params.tag).then(function (res) {
+		axios.get('/api/etiquetas/' + this.tag).then(function (res) {
 			_this.posts = res.data.data;
 		}).catch(function (err) {
 			console.log(err);

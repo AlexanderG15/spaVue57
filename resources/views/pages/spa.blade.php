@@ -30,9 +30,9 @@
           
           <nav-bar></nav-bar>
 				</div>
-			</header>
-
-			<router-view></router-view>
+      </header>
+      
+      <router-view :key="$route.fullPath"></router-view>
 
 			<section class="footer">
 				<footer>

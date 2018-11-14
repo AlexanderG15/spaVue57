@@ -35,6 +35,11 @@ export default new Router({
       name: 'category_posts',
       component: require('./views/CategoryPosts')
     },
+    {
+      path: '/etiquetas/:tag',
+      name: 'tags_posts',
+      component: require('./views/TagsPosts')
+    },
 		{
 			path: '*',
 			component: require('./views/404')
